@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
 
 
     public GameManager GameManagerScript;
+    public GameObject pIndicator;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +61,10 @@ public class PlayerInteract : MonoBehaviour
 
     IEnumerator powerupTime()
     {
+        damage = 100;
+        pIndicator.SetActive(true);
         yield return new WaitForSeconds(5);
-        damage /= 2;
+        damage = 50;
+        pIndicator.SetActive(false);
     }
 }
